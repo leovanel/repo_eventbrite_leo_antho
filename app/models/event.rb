@@ -9,7 +9,7 @@ class Event < ApplicationRecord
   validate :event_past
 
   validates :duration,
-  presence: true,:numericality => { :greater_than_or_equal_to => 0}
+  presence: true,:numericality => { :greater_than_or_equal_to => 1}
   validate :valid_duration
 
   validates :title,
@@ -22,7 +22,7 @@ class Event < ApplicationRecord
 
   validates :price,
   presence: true,
-  inclusion: 1..100
+  inclusion: 1..1000
 
   validates :location,
   presence: true

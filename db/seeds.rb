@@ -13,13 +13,14 @@ Event.all.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('events') 
 
 
-10.times do
+10.times do |x|
   User.create(first_name: Faker::TvShows::Buffy.character,last_name: Faker::TvShows::Buffy.character,
   email: "#{Faker::Name.last_name}@yopmail.com", description: Faker::TvShows::Buffy.quote,
-  encrypted_password:rand(1..10) )
+  password: "abcdef" )
+  puts "Seeding of USER nb #{x}"
 end
 
-t1 = Time.parse("2019-11-03 14:40:34")
+t1 = Time.parse("2019-11-06 14:40:34")
 t2 = Time.parse("2022-01-01 00:00:00")
 
 nb_events=20
@@ -27,11 +28,11 @@ nb_events=20
 nb_events.times do |x|
   Event.create(
     start_date: rand(t1..t2),
-    duration: rand(5..10)*5,
-    description: Faker::Lorem.paragraph_by_chars(number: 300, supplemental: false),
+    duration: rand(1..50)*5,
+    description: Faker::Lorem.paragraph_by_chars(number: 140, supplemental: false),
     location: Faker::Address.city,
     price: rand(1..1000),
-    title: Faker::Book.title,
+    title: "salutca va les gars?",
     user_id: rand(1..10))
   puts "Seeding of Event nb #{x}"
 end
