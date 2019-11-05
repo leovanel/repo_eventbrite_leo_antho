@@ -32,7 +32,7 @@ nb_events.times do |x|
     description: Faker::Lorem.paragraph_by_chars(number: 140, supplemental: false),
     location: Faker::Address.city,
     price: rand(1..1000),
-    title: "salutca va les gars?",
+    title: Faker::Lorem.paragraph_by_chars(number: 15, supplemental: false),
     user_id: rand(1..10))
   puts "Seeding of Event nb #{x}"
 end
