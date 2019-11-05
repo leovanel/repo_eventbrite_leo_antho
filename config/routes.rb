@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
  
+  get 'users/show'
   root 'events#index'
 
   resources :events
+  resources :users, only: [:show]
   
  
   
