@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
+ 
+  root 'events#index'
+
+  resources :events
+  
  
   
   get 'static_pages/secret'

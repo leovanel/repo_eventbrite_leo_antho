@@ -1,0 +1,22 @@
+<div class="jumbotron jumbotron-fluid" style="height=10px">
+  <div class="container" >
+    <center><h1 class="display-4"> "On vas sortir 2.0"</h1></center>
+    <center><p class="lead">Voila le super site de gossip, régale toi ! </p></center>
+    <center><h5><%= link_to "Creer un nouvel evenement", new_event_path %></h5></center>
+  </div>
+</div>
+
+<center><div class="card-deck"></center>
+<%@events.each do |liste|%>
+  <center><div class="card" style="width: 50rem;">
+  <h5 class="card-header"><%=liste.user.name%></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%=liste.title%></h5>
+    <%= link_to "voir l'evenement", event_path(liste.id) %>
+  </div>
+</div><center>
+</br>
+</br>
+<% end %>
+</div></center>
+
