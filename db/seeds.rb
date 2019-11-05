@@ -32,6 +32,6 @@ nb_events.times do |x|
     location: Faker::Address.city,
     price: rand(1..1000),
     title: Faker::Book.title,
-    user_id: User.all.sample.id)
+    user_id: rand(1..10))
   puts "Seeding of Event nb #{x}"
 end
