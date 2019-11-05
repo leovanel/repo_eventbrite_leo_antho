@@ -1,13 +1,18 @@
+
+  <br>
+  <br>
 <center><h1>Detail de l'event n° <%=@detail.id%></h1></center>
-  
+  <center>
+  <br>
+  <br>
   <p>Email de l'organisateur : <%= @detail.user.email %><p>
   <p>Titre : <%=@detail.title%><p>
   <p>Description : <%=@detail.description%><p>
-  <p>Prix : <%=@detail.price%><p>
+  <p>Prix : <%= @detail.price %> €<p>
   <p>ville : <%=@detail.location%><p>
   <p>Durée : <%=@detail.duration%><p>
   <p>Date de début : <%=@detail.start_date%><p>
 
  
-  
+  </center>
   
