@@ -42,6 +42,11 @@ class Event < ApplicationRecord
       
   end
 
+  def self.showall
+      events_array = Event.all					
+      return events_array   		
+    end
+
 
 
 

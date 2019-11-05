@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Events.showall
+    @events = Event.showall
   end
   
   def show
