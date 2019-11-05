@@ -9,7 +9,7 @@
 <center><div class="card-deck"></center>
 <%@events.each do |liste|%>
   <center><div class="card" style="width: 50rem;">
-  <h5 class="card-header"><%=liste.user.name%></h5>
+  <h5 class="card-header"><%=liste.user.last_name%></h5>
   <div class="card-body">
     <h5 class="card-title"><%=liste.title%></h5>
     <%= link_to "voir l'evenement", event_path(liste.id) %>

@@ -35,7 +35,11 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
         <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);">
         <a class="dropdown-item" href="/users/show">Mon profil</a>
-        <a class="dropdown-item" href="#">Se deconnecter</a>        
+        <%= form_tag destroy_user_session_path, method: :delete do %>
+          <input type="submit" class="btn btn-secondary" value="Deconnexion"/>
+          <%end%> 
+        <li class="dropdown-item">
+       
         </div>
         
         <%end%>
