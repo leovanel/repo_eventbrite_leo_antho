@@ -1,52 +1,13 @@
-<center><h1>Detail du Gossip n° <%=@detail.id%></h1></center>
-  <p>Auteur : <%=@detail.user.name%>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "voir le profil de l'auteur", user_path(@detail.user.id) %><p>
+<center><h1>Detail de l'event n° <%=@detail.id%></h1></center>
+  <p>Prénom de l'organisateur : <%= @detail.user.first_name %><p>
+  <p>Nom de l'organisateur : <%= @detail.user.last_name %><p>
   <p>Titre : <%=@detail.title%><p>
-  <p>Contenu : <%=@detail.content%><p>
-  <p>Date de parution : <%=@detail.date%><p>
-  <p>Ville de l'auteur: <%=@detail.user.city.name%>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "voir le détail de la ville", city_path(@detail.user.city.id)%><p><br/>
-  <% if current_user.id == @detail.user.id %>
-    <b><%= link_to "Mettre à jour le gossip", edit_gossip_path(@detail.id) %></b><br>
-    <%= form_tag url_for(action: 'destroy'),method: "delete" do %>
-      <%= submit_tag "Supprimer" %>
-    <% end %>
-  <% end %>
-  <% puts Like.where(gossip_id: @detail.id, user_id: current_user.id).exists?%>
-   <% puts (current_user != nil)%>
-   <% puts (current_user.likes == nil)%>
-  <% if (current_user != nil) && Like.where(gossip_id: @detail.id, user_id: current_user.id).exists?%>
-    <%= form_tag gossip_like_path(gossip_id: params['id'],action:'destroy'),method: "delete" do %>
-      <%= submit_tag "Tu n'aime plus?" %>
-    <% end %>
-  <% elsif (current_user != nil)%>
-    <%= form_tag gossip_likes_path(gossip_id: params['id'],action:"create") do %>
-      <%= submit_tag "like moi !" %>
-    <% end %>
-  <% end %>
-  <%=@nblikes%>&nbsp;Like<p>
-  <br/>
-  <div class="card">
-  <div class="card-body">
-    <%= form_tag gossip_comments_path(gossip_id: params['id'],action:"create") do %>
-    <h5><%= label_tag 'Nouveau commentaire :' %></h5>
-    <%= text_area_tag 'content'%><br>
-    <%= submit_tag "Valider" %>
-    <%end%>
-  </div>
-  </div>
-  <div class="card">
-  <div class="card-body">
-  <b><p>Tout les commentaires :<p></b>
-  </div>
-  </div>
-  <center><div class="card-deck"></center>
-  <%@array_coms.each do |commentaires|%>
-    <% if commentaires.gossip_id == @detail.id%>
-    <div class="card">
-    <div class="card-body">
-    <p><%=commentaires.user.name%><p>
-    <p><%=commentaires.content%><p>
-    </div>
-    </div>
-    <%end%>
-  <%end%>
-  </div>
+  <p>Description : <%=@detail.description%><p>
+  <p>Prix : <%=@detail.price%><p>
+  <p>ville : <%=@detail.location%><p>
+  <p>Durée : <%=@detail.duration%><p>
+  <p>Date de début : <%=@detail.start_date%><p>
+
+ 
+  
+  

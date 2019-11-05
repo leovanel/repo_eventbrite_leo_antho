@@ -3,5 +3,25 @@
   <p>Nom: <%=@profil.last_name%><p>
   <p>Email: <%=@profil.email%><p>
   <p>Description : <%=@profil.description%><p>
+
+  <%=link_to "modifier le profil", edit_user_registration_path %>
+
+  <center><div class="card-deck"></center>
   
+<% @events.each do |liste| %>
+
+  <% if @profil.id == liste.user_id %>
+  <center><div class="card" style="width: 50rem;">
+  <h5 class="card-header"><%=liste.user.last_name%></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%=liste.title%></h5>
+    <%= link_to "voir l'evenement", event_path(liste.id) %>
+  </div>
+</div><center>
+</br>
+</br>
+
+<% end %>
+<% end %>
+</div></center>
  
