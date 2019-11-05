@@ -20,12 +20,7 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Nouvel évenement</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
+        
         <% if current_user == nil %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Sign-up/Sign-in</a>
@@ -35,15 +30,15 @@
               
             
           </div>
-          <% if current_user != nil %>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
-          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);">
-            <a class="dropdown-item" href="#">Mon profil</a>
-            <a class="dropdown-item" href="#">Se deconnecter</a>        
-          </div>
-          <%end%>
-          <%end%>
+        <% else %>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mon profil</a>
+        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 39px, 0px);">
+        <a class="dropdown-item" href="#">Mon profil</a>
+        <a class="dropdown-item" href="#">Se deconnecter</a>        
+        </div>
+        
+        <%end%>
 
         </li>
       </ul>
