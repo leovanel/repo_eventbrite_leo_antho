@@ -53,6 +53,7 @@ end
 gem 'faker'
 gem 'table_print'
 gem 'devise'
+gem 'dotenv'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
