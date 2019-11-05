@@ -3,7 +3,7 @@
 
 <p>Codé avec coeur par Leo et Anthony de la team Montpellier pour la formation The Hacking Project</p>
 
-<p>voici le lien HEROKU : https://evenbrite-leo.herokuapp.com/</p>
+<p>voici le lien HEROKU : https://lit-wave-15849.herokuapp.com/</p>
 
 
 <h2>1. Introduction</h2>
